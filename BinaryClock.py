@@ -1,4 +1,5 @@
 import time
+from threading import Thread
 
 try:
     import RPi.GPIO as GPIO
@@ -7,13 +8,16 @@ except RuntimeError:
 
 GPIO.setmode(GPIO.BCM)
 
-outputChannelList = [5, 6, 12, 13, 16, 19, 20, 21, 26]  
+outputChannelList = [5, 6, 12, 13, 16, 19, 20, 21, 24, 25, 26]  
 
-GPIO.setup(chan_list, GPIO.OUT)
-GPIO.output(chan_list, GPIO.HIGH) 
+GPIO.setup(outputChannelList, GPIO.OUT)
+GPIO.output(outputChannelList, GPIO.HIGH) 
 
 time.sleep(5)  
 
 #print("Binary Clock running, shut down with ctrl-c .")
 
 GPIO.cleanup()
+
+class TimeControl(Thread):
+
