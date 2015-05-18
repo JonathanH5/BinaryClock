@@ -11,7 +11,7 @@
 ####################################################################################################################################
 
 # If true, the gpio ports get changed based on the computed LED configuration, otherwise only the logic part gets executed (good for testing on a device not a raspberry pi.
-controlGPIO = False
+controlGPIO = True
 
 # Channels: exampleName: ch1 = channelHourOne; cm1 = channelMinuteOne
 ch1 = 5
@@ -22,7 +22,7 @@ ch16 = 26
 cm1 = 24
 cm2 = 25
 cm4 = 12
-cm8 = 15
+cm8 = 16
 cm16 = 20
 cm32 = 21
 
@@ -83,7 +83,7 @@ def setUpGPIO():
 		GPIO.setup(cm1, GPIO.OUT)
 		GPIO.setup(cm2, GPIO.OUT)
 		GPIO.setup(cm4, GPIO.OUT)
-		GPIO.setup(cm6, GPIO.OUT)
+		GPIO.setup(cm8, GPIO.OUT)
 		GPIO.setup(cm16, GPIO.OUT)
 		GPIO.setup(cm32, GPIO.OUT)
 		print("GPIO set up")
