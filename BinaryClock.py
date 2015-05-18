@@ -2,6 +2,7 @@
 # TODO
 ####################################################################################################################################
 
+# Refresh Intervall should be set automatically
 # create button functionality
 # create communication with OpenHab
 # create alarm functionality
@@ -93,7 +94,7 @@ def setUpGPIO():
 def calculateBinary(n, wishedLength):
 	binary = ""
 	if n == 0:
-		return '0'
+		binary = "0"
 	while n > 0:
 		binary = str(n % 2) + binary
 		n = n >> 1
